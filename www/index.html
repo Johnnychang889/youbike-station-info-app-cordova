@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+        <link rel="stylesheet" href="css/myTheme.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <link href="css/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
+        <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+	<div data-role="page" id="start">
+	  <div data-role="main" class="ui-content">
+		<img src="img/ubike.png" alt="ubike">
+		<br>
+		<div>
+		  <a class="ui-btn Kanit" href="#home">點擊開始</a>
+		</div>
+	  </div>
+	</div>
+	  
+      <div data-role="page" id="home" class="ui-page-theme-a" >
+        <div data-role="header">
+          <h1>YouBike2.0臺北市公共自行車即時資訊</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+
+          <form>
+            <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+                <input data-type="search" data-enhanced="true" data-inset="false" id="pre-rendered-example-input" placeholder="搜尋站名..." value="">
+            </div>
+            <div data-role="controlgroup" data-enhanced="true" data-filter="true" data-filter-reveal="true" data-input="#pre-rendered-example-input" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+                <div class="ui-controlgroup-controls" id="keyword-list">
+                  <a class="ui-btn ui-corner-all ui-shadow ui-first-child ui-shadow ui-last-child" style="display: none;"> </a>
+                </div>
+            </div>
+          </form>
+
+          <select name="select-area" id="select-area">
+            <option value="0">選擇行政區</option>
+            <option value="1">北投區</option>
+            <option value="2">士林區</option>
+            <option value="3">大同區</option>
+            <option value="4">中山區</option>
+            <option value="5">內湖區</option>
+            <option value="6">松山區</option>
+            <option value="7">萬華區</option>
+            <option value="8">中正區</option>
+            <option value="9">大安區</option>
+            <option value="10">信義區</option>
+            <option value="11">南港區</option>
+            <option value="12">文山區</option>
+          </select>
+          <ul id="ubikeData" data-role="listview" data-inset="true">
+
+          </ul>
+        </div>
+        <div data-role="footer" class="footer">
+          A8222714章弘諭
+        </div>
+      </div>
+      <script src="cordova.js"></script>
+      <script src="js/index.js"></script>
+      
+    </body>
+</html>
